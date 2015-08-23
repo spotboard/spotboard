@@ -1,0 +1,121 @@
+[
+    {
+        "id": 22,
+        "rank": "대상",
+        "icon": "crown",
+        "group": "서울대학교",
+        "name": "cpp"
+    },
+    {
+        "id": 55,
+        "rank": "금상",
+        "icon": "gold",
+        "group": "KAIST",
+        "name": "OriGoGi"
+    },
+    {
+        "id": 47,
+        "rank": "금상",
+        "icon": "gold",
+        "group": "고려대학교",
+        "name": "Let Myungwoo go WF"
+    },
+    {
+        "id": 75,
+        "rank": "금상",
+        "icon": "gold",
+        "group": "연세대학교",
+        "name": "Underwood"
+    },
+    {
+        "id": 17,
+        "rank": "은상",
+        "icon": "silver",
+        "group": "POSTECH",
+        "name": "CHOCOLATE"
+    },
+    {
+        "id": 69,
+        "rank": "은상",
+        "icon": "silver",
+        "group": "한양대학교",
+        "name": "StyleShare"
+    },
+    {
+        "id": 67,
+        "rank": "은상",
+        "icon": "silver",
+        "group": "경희대학교",
+        "name": "SoMacAir"
+    },
+    {
+        "id": 40,
+        "rank": "동상",
+        "icon": "bronze",
+        "group": "서강대학교",
+        "name": "Kim N Kang"
+    },
+    {
+        "id": 66,
+        "rank": "동상",
+        "icon": "bronze",
+        "group": "숭실대학교",
+        "name": "Snorlax"
+    },
+    {
+        "id": 13,
+        "rank": "동상",
+        "icon": "bronze",
+        "group": "인하대학교",
+        "name": "Boarding Gozy"
+    },
+    {
+        "id": 41,
+        "rank": "동상",
+        "icon": "bronze",
+        "group": "UNIST",
+        "name": "KimchiManWon"
+    },
+    {
+        "id": 78,
+        "rank": "Naver 특별상",
+        "icon": "star",
+        "group": "서울대학교",
+        "name": "Wook Norris"
+    },
+    {
+        "id": 29,
+        "rank": "Naver 특별상",
+        "icon": "star",
+        "group": "서울과학기술대학교",
+        "name": "EC5"
+    },
+    {
+        "id": 52,
+        "rank": "Devsisters 특별상",
+        "icon": "star",
+        "group": "POSTECH",
+        "name": "No TTang"
+    },
+    {
+        "id": 7,
+        "rank": "Devsisters 특별상",
+        "icon": "star",
+        "group": "한양대학교",
+        "name": "BALOHAM"
+    },
+    {
+        "id": 42,
+        "rank": "Nexon 특별상",
+        "icon": "star",
+        "group": "서울대학교",
+        "name": "KimchiWarrior"
+    },
+    {
+        "id": 1,
+        "rank": "Nexon 특별상",
+        "icon": "star",
+        "group": "고려대학교",
+        "name": "ACRush"
+    }
+]

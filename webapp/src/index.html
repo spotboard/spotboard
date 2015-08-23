@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Spotboard</title>
+    <link href="css/normalize.css" rel="stylesheet" type="text/css">
+    <link href="css/scoreboard.css" rel="stylesheet" type="text/css">
+    <link href="css/jquery.badger.css" rel="stylesheet" type="text/css">
+
+    <meta http-equiv="Content-Language" content="ko, en">
+
+    <script type="text/javascript" src="js/lib/require.js"></script>
+    <script type="text/javascript" src="./config.js"></script>
+    <script type="text/javascript" src="js/require-config.js"></script>
+    <script type="text/javascript">
+    // production only settings (minified)
+    if(config.environment !== 'develop') {
+      require.config({
+        paths: { "app" : "spotboard-all.min" }
+      });
+    }
+    require(['app']);
+    </script>
+
+  </head>
+  <body><div id="wrapper">
+
+    <div id="header">
+      <span id="time-elapsed">xx:xx</span>
+      <span id="clock-icon" class="icon"></span>
+      <span id="events-icon" class="icon hoverable" title="Show Events Timeline"></span>
+      <span id="feed-all-icon" class="icon hoverable" title="Update All Runs"></span>
+      <span id="feed-one-icon" class="icon hoverable" title="Update Single Run"></span>
+      <span id="feed-auto-icon" class="icon hoverable playing" title="Automatically Update"></span>
+      <span id="update-icon" class="icon hoverable" title="Feed New Run"></span>
+      <span id="notify-icon" class="icon hoverable" title="Toggle Notification"></span>
+      <input type="text" id="search-input"></input>
+      <div id="page-nav">
+        <div id="page-label">Page <span class="current-page">1</span> of <span class="max-page">?</span></div>
+        <div>
+          <span id="page-left"  class="disabled">&lt;&lt;</span>
+          <span id="page-right" class="disabled">&gt;&gt;</span>
+        </div>
+      </div>
+      <span></span>
+      <h1 id="contest-title">Spotboard</h1>
+      <div class="clear"> </div><!-- overflow: auto trick doesn't work here-->
+    </div>
+
+    <!-- Team List -->
+    <div id="body">
+      <div id="team-list">
+
+        <script id="team-handlebar-template" type="text/x-handlebar-template">
+<div id="team-{{id}}" class="team solved-{{solved}}">
+  <span class="solved-count"></span>
+  <span class="team-rank suffix-{{ordinalSuffix rank}}">{{rank}}</span>
+  <span class="team-penalty">{{penalty}}</span>
+  <div class="results">
+{{#each problems}}
+    <span class="problem-result problem-{{this.id}}" data-problem-id="{{this.id}}"></span>
+{{/each}}
+  </div>
+  <div class="balloons"></div>
+  <div class="team-title">
+    <span class="team-name">{{name}}</span>
+    <span class="team-represents">{{group}}</span>
+  </div>
+  <div class="clear"></div>
+</div>
+        </script>
+
+        <div id="loading-message" class="center">
+        Loading... Please Wait
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <div id="credits">
+        <span>
+          Spotboard Project from <a href="http://www.algospot.com/">algospot.com</a>,
+          <a href="http://www.catcoder.net/">Being</a> and <a href="http://wook.kr">wookayin</a>
+        </span>
+        <span id="system-information">CSUS Programming Contest System</span>
+        <span>Icons from <a href="http://www.fatcow.com/free-icons">FatCow</a></span>
+      </div>
+
+      <!-- Dashboard -->
+      <div id="dashboard">
+        <h2>
+          Recent events ::
+          <a id="events-filter"></a>
+        </h2>
+        <ul class="runs">
+        </ul>
+      </div>
+      <div class="clear"></div>
+    </div>
+  </div></body>
+</html>
+
