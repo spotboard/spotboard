@@ -49,12 +49,21 @@ function($, Spotboard) {
                 problems = contest.getProblems();
             var order = Spotboard.config['award_reveal_order'] || [];
             var priority = new Array(contest.getProblems().length);
+
+            // construct a dict from (problem title) -> id,
+            // e.g. {'A' : 1, 'B' : 2, ...}
             var problemTitleToId = {};
-            for(var i = 0; i < problems.length; ++ i) problemTitleToId[problems[i].title] = problems[i].id;
+            for(var i = 0; i < problems.length; ++ i) {
+                var problemTitle = problems[i].title;
+                problemTitleToId[problemTitle] = problems[i].id;
+                // PC^2 default is 'Problem A' or something like this
+                problemTitleToId[problemTitle.replace(/^Problem /, '')] = problems[i].id;
+            }
+            // set up priority (larger is earlier)
             for(var i = 0; i < priority.length; ++ i) priority[i] = -i;
             for(var i = 0; i < order.length; ++ i) {
                 var id = problemTitleToId[order[i]] || parseInt(order[i]);
-                priority[id] += 10000;
+                priority[id] += (order.length - i) * 10000;
             }
             return priority;
         })();
