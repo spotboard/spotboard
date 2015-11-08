@@ -3,8 +3,7 @@
   "description": "Spotboard",
   "version": "0.5.0",
   "engines": {
-    "node": ">= 0.10.0",
-    "iojs": ">= 3.1.0"
+    "node": ">= 4.2.2"
   },
   "scripts": {},
   "devDependencies": {
