@@ -790,7 +790,7 @@ div.results:after {
     width: 2.3em;
     font-size: 0.6em;
     line-height: 450%;
-    letter-spacing: 0;
+    letter-spacing: -1px;
     font-weight: 600;
     color: white;
 
@@ -827,6 +827,7 @@ div.results:after {
     height: 100%;
     box-sizing: border-box;
     margin-left: -0.5em;
+    letter-spacing: 0px;
 }
 
 @-webkit-keyframes flip-before-animation {
