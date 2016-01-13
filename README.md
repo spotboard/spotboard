@@ -3,7 +3,12 @@ Spotboard
 
 *Spotboard* is an awesome, fancy, and modern web-based scoreboard application for programming contests, especially ACM-ICPC.
 
-> TODO: Insert Demo Here
+Demo
+----
+
+* Official Scoreboard: [[2015 Daejeon Regional]](http://icpckorea.org/2015/REGIONAL/scoreboard.html)
+* Award Ceremony Video: [[2013]](https://youtu.be/ZXYwvFinZEk?t=1215) [[2014]](https://youtu.be/UVAnGe35PY4) [[2015]](https://youtu.be/kF5RR2TXgkk?t=287)
+
 
 Usage
 -----
