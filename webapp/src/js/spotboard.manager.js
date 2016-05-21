@@ -298,7 +298,7 @@ function(Spotboard, $)  {
                     });
 
                     // update timer
-//                    Spotboard.Manager.displayedContestTime = runfeeder.getContestTime();
+                    Spotboard.Manager.displayedContestTime = runfeeder.getContestTime();
                     $(runfeeder).trigger('change');
                 },
                 timeout : Spotboard.config['fetch_timeout'] || 2000,
