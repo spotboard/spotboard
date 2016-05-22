@@ -12,13 +12,13 @@ function(Spotboard, $) {
     Spotboard.Notify.autoclose_delay = 7000;
 
     Spotboard.Notify.toggleNotification = function(elem) {
-        if(! window.webkitNotifications) {
+        if(!('Notification' in window)) {
             // not supported
             return false;
         }
 
-        if(window.webkitNotifications.checkPermission() != 0) {
-            window.webkitNotifications.requestPermission();
+        if(Notification.permission !== 'granted') {
+            Notification.requestPermission();
             return Spotboard.Notify.enabled;
         }
 
@@ -44,20 +44,18 @@ function(Spotboard, $) {
             + 'New Rank : ' + contest.getTeamStatus(team).getRank();
         var balloonIcon = 'assets/balloons/' + run.getProblem().getColor() + '.png';
 
-        var note = window.webkitNotifications.createNotification(
-            balloonIcon, title, body
-        );
-        note.ondisplay = function(e) {
-            // 잠시 후 사라지게 함
-            setTimeout( function() {
-                e.currentTarget.cancel();
-            }, Spotboard.Notify.autoclose_delay);
-        };
-        note.onclick = function(e) {
+        var note = new Notification(title, {
+            icon: balloonIcon,
+            body: body
+        });
+
+        note.onclick = function() {
             window.focus();
             this.cancel();
         };
-        note.show();
+
+        // Auto hide Notification
+        setTimeout(note.close.bind(note), Spotboard.Notify.autoclose_delay);
         return note;
     };
 
