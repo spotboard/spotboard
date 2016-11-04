@@ -124,6 +124,24 @@ function($, Spotboard) {
             return $df.resolve('done');
         }
 
+        // state: (none) -> (focused) -> (revealing) -> (done)
+        if(! $pending.hasClass('award-run-focus') && ! $pending.hasClass('award-run-revealing')) {
+            // (none) -> (focused)
+            $pending.addClass('award-run-focus');
+            return $df.resolve('run-focused')
+        }
+        else {
+            // (focused) -> (revealing)
+            $pending.removeClass('award-run-focus');
+            $pending.addClass('award-run-revealing');
+
+            $df.always(function() {
+              // after resolved, remove this marker class as well
+              // (revealing) -> (done)
+              $pending.removeClass('award-run-revealing');
+            });
+        }
+
         var problemId = $pending.data('problem-id'),
             teamId = $team.data('team-id');    // TODO ㅜㅜ
 

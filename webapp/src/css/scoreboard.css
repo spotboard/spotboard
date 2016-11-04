@@ -625,6 +625,19 @@ div.team {
     }
 }
 
+.award-run-focus {
+            animation: blink-animation 1s linear infinite;
+            animation-fill-mode: forwards !important;
+    -webkit-animation: blink-animation 1s linear infinite;
+    -webkit-animation-fill-mode: forwards !important;
+}
+@keyframes blink-animation {
+    50%  { background-color: #e67700; }
+}
+@-webkit-keyframes blink-animation {
+    50%  { background-color: #e67700; }
+}
+
 .award-slide {
     position: fixed;
     top: 0;
