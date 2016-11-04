@@ -489,38 +489,6 @@ div.team {
     border-bottom-right-radius: 0.3em;
 }
 
-@-webkit-keyframes team-name-show-anim {
-    0% {
-        color: transparent;
-        opacity: 0;
-        text-shadow: 0;
-    }
-
-    20% {
-        color: transparent;
-        opacity: 1;
-        text-shadow: 0;
-    }
-
-    20% {
-        color: #BA0D0D;
-        text-shadow: 0 0 1em #BA0D0D;
-    }
-
-    40% {
-        text-shadow: 0 0 1em #BA0D0D;
-    }
-
-    80% {
-        color: black;
-        text-shadow: 0 0 0.1em #BA0D0D;
-    }
-
-    100% {
-        color: black;
-        text-shadow: 0;
-    }
-}
 
 .team-title {
     display: block;
@@ -624,6 +592,38 @@ div.team {
     -webkit-animation: team-name-show-anim 1s;
 }
 
+@-webkit-keyframes team-name-show-anim {
+    0% {
+        color: transparent;
+        opacity: 0;
+        text-shadow: 0;
+    }
+
+    20% {
+        color: transparent;
+        opacity: 1;
+        text-shadow: 0;
+    }
+
+    20% {
+        color: #BA0D0D;
+        text-shadow: 0 0 1em #BA0D0D;
+    }
+
+    40% {
+        text-shadow: 0 0 1em #BA0D0D;
+    }
+
+    80% {
+        color: black;
+        text-shadow: 0 0 0.1em #BA0D0D;
+    }
+
+    100% {
+        color: black;
+        text-shadow: 0;
+    }
+}
 
 .award-slide {
     position: fixed;
