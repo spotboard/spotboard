@@ -132,6 +132,18 @@ config =
     award_reveal_order : [],
 
     /**
+     * Specify whether to use blinking effect before revealing a focused pending run.
+     * This value can be a boolean (True or False),
+     * or a function to specify trigger conditions dynamically.
+     * In this case, function takes a single argument 'teamStatus', of type TeamStatus.
+     */
+    award_focus_blinking : function(teamStatus) {
+      // use blinking effect only if # of problems solved is more than 7.
+      var solved = teamStatus.getTotalSolved();
+      return solved >= 7;
+    },
+
+    /**
      * Specify additional foreign or extra teams, as a list of team id.
      *
      * In award ceremony, revealing of foreign teams will be postponed until

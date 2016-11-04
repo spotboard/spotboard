@@ -124,26 +124,34 @@ function($, Spotboard) {
             return $df.resolve('done');
         }
 
-        // state: (none) -> (focused) -> (revealing) -> (done)
-        if(! $pending.hasClass('award-run-focus') && ! $pending.hasClass('award-run-revealing')) {
-            // (none) -> (focused)
-            $pending.addClass('award-run-focus');
-            return $df.resolve('run-focused')
-        }
-        else {
-            // (focused) -> (revealing)
-            $pending.removeClass('award-run-focus');
-            $pending.addClass('award-run-revealing');
-
-            $df.always(function() {
-              // after resolved, remove this marker class as well
-              // (revealing) -> (done)
-              $pending.removeClass('award-run-revealing');
-            });
-        }
-
         var problemId = $pending.data('problem-id'),
             teamId = $team.data('team-id');    // TODO ㅜㅜ
+
+        /* use blinking effect if possible */
+        var use_blinking_effect = Spotboard.config['award_focus_blinking'];
+        if(typeof use_blinking_effect === "function") {
+            use_blinking_effect = !! use_blinking_effect(contest.getTeamStatus(teamId));
+        }
+        if(use_blinking_effect) {
+          /* state: (none) -> (focused) -> (revealing) -> (done) */
+            if(! $pending.hasClass('award-run-focus') &&
+               ! $pending.hasClass('award-run-revealing')) {
+                // a. (none) -> (focused)
+                $pending.addClass('award-run-focus');
+                return $df.resolve('run-focused')
+            }
+            else {
+                // b. (focused) -> (revealing)
+                $pending.removeClass('award-run-focus');
+                $pending.addClass('award-run-revealing');
+
+                $df.always(function() {
+                  // after resolved, remove this marker class as well
+                  // c. (revealing) -> (done)
+                  $pending.removeClass('award-run-revealing');
+                });
+            }
+        }
 
         // 등수에 따라 애니메이션 (flip/move team up) 속도를 다르게 함
         // solved 경계값을 기준으로 (푼 문제수) >= solved 인 최초의 것을 찾음
