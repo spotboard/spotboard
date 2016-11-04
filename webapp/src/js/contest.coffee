@@ -312,6 +312,18 @@ class ProblemSummary
                 r += 1 if run.isPending()
             return r
 
+    getFirstSolvedTime : ->
+        return @cache.firstSolvedTime ? @cache.firstSolvedTime = do =>
+            first_time = 9999999
+            for rid, run of @runs
+                if run.isAccepted()
+                    first_time = Math.min(first_time, run.getTime())
+            return first_time
+
+    isFirstSolved : (problemStatus) ->
+        throw new Error('#isFirstSolved : should be TeamProblemStatus') unless (problemStatus instanceof TeamProblemStatus)
+        return problemStatus.getSolvedTime() == @getFirstSolvedTime()
+
 
 class Run
     # context : contest
@@ -766,7 +778,7 @@ M = {
     Contest: Contest,
     TeamStatus: TeamStatus,
     TeamProblemStatus: TeamProblemStatus,
-    ProblemSummary: Problem,
+    ProblemSummary: ProblemSummary,
     RunFeeder: RunFeeder,
 
     FIFORunFeedingStrategy: FIFORunFeedingStrategy,

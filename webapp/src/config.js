@@ -44,6 +44,11 @@ config =
     show_team_group    : true,
 
     /**
+     * Specify whether to highlight first solve runs.
+     */
+    show_first_solve   : true,
+
+    /**
      * Specify whether to automatically start the scoreboard update.
      * If false, update will be paused.
      */

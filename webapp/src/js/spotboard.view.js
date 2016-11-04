@@ -371,9 +371,18 @@ function($, Handlebars, Spotboard) {
 
             $(this).removeClass('solved failed pending');
             if(problemStat.isAccepted()) {
+                // solved the problem, add balloon
                 $(this).addClass('solved');
                 if($team.find('.balloon.problem-' + index).length == 0)
                     problemsNewlySolved.push(problemStat);
+
+                // detect if first solved
+                if(Spotboard.config['show_first_solve']) {
+                    var problemSummary = contest.getProblemSummary(problems[index]);
+                    if(problemSummary.isFirstSolved(problemStat)) {
+                        $(this).addClass('solved-first')
+                    }
+                }
             }
             else {
                 if(problemStat.isPending())
@@ -389,7 +398,11 @@ function($, Handlebars, Spotboard) {
             }
             if(problemStat.isAccepted()) {
               //$(this).attr('data-balloon', problemStat.getPenaltyMemoString());
-                $(this).attr('data-balloon', 'Solved at ' + problemStat.getSolvedTime() + ' min');
+                var penalty_string = 'Solved at ' + problemStat.getSolvedTime() + ' min';
+                if(Spotboard.config['show_first_solve'] && $(this).hasClass('solved-first')) {
+                    penalty_string += ' (First Solve)';
+                }
+                $(this).attr('data-balloon', penalty_string);
                 $(this).attr('data-balloon-pos', 'down');
             }
         });
