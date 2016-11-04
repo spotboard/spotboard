@@ -99,7 +99,6 @@ sup {
     position: fixed;
     height: 0.625em;
     font-size: 3.4em; /* fuck you, chrome - it forces font size >= 10px*/
-    overflow: hidden;
 }
 
 .award-mode #header {

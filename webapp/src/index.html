@@ -5,6 +5,7 @@
     <link href="css/normalize.css" rel="stylesheet" type="text/css">
     <link href="css/scoreboard.css" rel="stylesheet" type="text/css">
     <link href="css/jquery.badger.css" rel="stylesheet" type="text/css">
+    <link href="css/balloon.min.css" rel="stylesheet" type="text/css">
 
     <meta http-equiv="Content-Language" content="ko, en">
 
@@ -27,12 +28,12 @@
     <div id="header">
       <span id="time-elapsed">xx:xx</span>
       <span id="clock-icon" class="icon"></span>
-      <span id="events-icon" class="icon hoverable" title="Show Events Timeline"></span>
-      <span id="feed-all-icon" class="icon hoverable" title="Update All Runs"></span>
-      <span id="feed-one-icon" class="icon hoverable" title="Update Single Run"></span>
-      <span id="feed-auto-icon" class="icon hoverable playing" title="Automatically Update"></span>
-      <span id="update-icon" class="icon hoverable" title="Feed New Run"></span>
-      <span id="notify-icon" class="icon hoverable" title="Toggle Notification"></span>
+      <span id="events-icon"    class="icon hoverable" data-balloon="Show/Hide Events Timeline" data-balloon-pos="down"></span>
+      <span id="feed-all-icon"  class="icon hoverable" data-balloon="Update All Runs" data-balloon-pos="down"></span>
+      <span id="feed-one-icon"  class="icon hoverable" data-balloon="Update Single Run" data-balloon-pos="down"></span>
+      <span id="feed-auto-icon" class="icon hoverable playing" data-balloon="Automatically Update" data-balloon-pos="down"></span>
+      <span id="update-icon"    class="icon hoverable" data-balloon="Feed New Run" data-balloon-pos="down"></span>
+      <span id="notify-icon"    class="icon hoverable" data-balloon="Toggle Desktop Notification" data-balloon-pos="down"></span>
       <input type="text" id="search-input"></input>
       <div id="page-nav">
         <div id="page-label">Page <span class="current-page">1</span> of <span class="max-page">?</span></div>
