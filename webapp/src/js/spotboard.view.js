@@ -67,7 +67,7 @@ function($, Handlebars, Spotboard) {
             var pid = problem.getId();
             var probColor = problem.getColor();
             $style.append(
-'.problem-result.problem-' + pid + ':before { content: "' + problems[i].getName() + '"; }\n'
+'.problem-result.problem-' + pid + ' b:before { content: "' + problems[i].getName() + '"; }\n'
             );
             if(probColor) $style.append(
 '.balloon.problem-' + pid + ' { background-image: url(assets/balloons/' + probColor + '.png); }\n'
@@ -384,7 +384,13 @@ function($, Handlebars, Spotboard) {
 
             var sign = problemStat.isAccepted() ? "+" : "-";
             if(problemStat.getFailedAttempts() > 0) {
-                $(this).text(sign + problemStat.getFailedAttempts());
+                $(this).find('.problem-result-text')
+                  .text(sign + problemStat.getFailedAttempts());
+            }
+            if(problemStat.isAccepted()) {
+              //$(this).attr('data-balloon', problemStat.getPenaltyMemoString());
+                $(this).attr('data-balloon', 'Solved at ' + problemStat.getSolvedTime() + ' min');
+                $(this).attr('data-balloon-pos', 'down');
             }
         });
 
@@ -403,6 +409,8 @@ function($, Handlebars, Spotboard) {
         $('<span></span>')
             .addClass('balloon')
             .addClass('problem-' + problemStat.getProblem().getId())
+            .attr('data-balloon', 'Problem ' + problemStat.getProblem().getTitle())
+            .attr('data-balloon-pos', 'down')
             .appendTo($balloonHolder);
     };
 

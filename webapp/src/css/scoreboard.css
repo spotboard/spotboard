@@ -815,6 +815,20 @@ div.results:after {
     text-shadow: none;
 }
 
+.problem-result:after { /* balloon.css */
+    height: 20px;
+    font-size: 13px;
+    line-height: 19px; /* TODO weird !!! */
+    font-weight: normal;
+    letter-spacing: 0px;
+}
+
+
+/* inner text (e.g. +1, -7) */
+.problem-result b {
+    font-weight: 600;
+}
+
 #wrapper:not(.award-mode) .team:hover .problem-result {
     border-color: #E2F08B;
 }
@@ -823,7 +837,7 @@ div.results:after {
     border-color: #E2F08B !important;
 }
 
-.problem-result:before {
+.problem-result b:before {
     color: #bbb;
     content: '';
     display: block;
@@ -911,10 +925,10 @@ div.results:after {
         rgba(32, 102, 14, 0.8),
         rgba(32, 102, 14, 1.0)
     );
-    overflow: hidden;
+    /*overflow: hidden;*/
 }
 
-.solved:before {
+.solved b:before {
     color: white;
     text-shadow: 0 0 1px rgba(255,255,255,0.5), 0 0 2.5px rgba(255,255,255,0.2);
 }
@@ -928,10 +942,10 @@ div.results:after {
         #e06b66 10px,
         #e06b66 20px
     );
-    overflow: hidden;
+    /*overflow: hidden;*/
 }
 
-.failed:before {
+.failed b:before {
     color: white;
     text-shadow: 0 0 1px rgba(255,255,255,0.5), 0 0 2.5px rgba(255,255,255,0.2);
 }
@@ -941,7 +955,7 @@ div.results:after {
     color: #555;
 }
 
-.pending:before {
+.pending b:before {
     color: #555;
     text-shadow: 0 0 1px rgba(80,80,80,0.5), 0 0 2.5px rgba(80,80,80,0.2);
 }

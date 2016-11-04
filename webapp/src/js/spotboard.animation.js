@@ -191,7 +191,8 @@ function($, Spotboard) {
 
                         // update text and color
                         if(this.problemStat.getFailedAttempts() > 0) {
-                            this.$box.text("-" + this.problemStat.getFailedAttempts());
+                            this.$box.find('.problem-result-text')
+                                .text("-" + this.problemStat.getFailedAttempts());
                         }
                         this.$box.removeClass('solved pending failed').addClass(this.runEvent);
                     }.bind(this));

@@ -230,6 +230,15 @@ class TeamProblemStatus
                 return (this.getFailedAttempts()) * 20 + this.getSolvedTime()
             else return 0
 
+    getPenaltyMemoString : ->
+        return @cache.penaltyMemo ? @cache.penaltyMemo = do =>
+            if this.isAccepted()
+                if this.getFailedAttempts() == 0
+                    return "#{this.getSolvedTime()}"
+                else
+                    return "#{this.getSolvedTime()} + 20 * #{this.getFailedAttempts()} = #{this.getContributingPenalty()}"
+            else return ''
+
     getSolvedTime : ->
         return @cache.solvedTime ? @cache.solvedTime = do =>
             run = this.getNetLastRun()
