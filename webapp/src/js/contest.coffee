@@ -76,6 +76,12 @@ class Problem
     getTitle : -> @title
     getColor : -> @color
 
+    toString : ->
+        s = "Problem #{@name}"
+        if @title and @title != s
+            s += " : #{@title}"
+        return s
+
 
 class Team
     constructor : (@contest, @id, @name, @group = null) ->

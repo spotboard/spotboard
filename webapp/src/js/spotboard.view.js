@@ -419,10 +419,11 @@ function($, Handlebars, Spotboard) {
 
     Spotboard.View.addBalloon = function($team, problemStat) {
         var $balloonHolder = $team.find('.balloons');
+        var problem = problemStat.getProblem();
         $('<span></span>')
             .addClass('balloon')
-            .addClass('problem-' + problemStat.getProblem().getId())
-            .attr('data-balloon', 'Problem ' + problemStat.getProblem().getTitle())
+            .addClass('problem-' + problem.getId())
+            .attr('data-balloon', problem.toString())
             .attr('data-balloon-pos', 'down')
             .appendTo($balloonHolder);
     };
