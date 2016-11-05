@@ -815,12 +815,16 @@ div.results:after {
     text-shadow: none;
 }
 
-.problem-result:after { /* balloon.css */
+.problem-result:after { /* tooltip element w/ balloon.css */
     height: 20px;
     font-size: 13px;
     line-height: 19px; /* TODO weird !!! */
     font-weight: normal;
     letter-spacing: 0px;
+}
+.problem-result.solved-first:after {
+    /* for first-solved run, slightly modify the tooltip text */
+    content: attr(data-balloon) " (First Solve)";
 }
 
 

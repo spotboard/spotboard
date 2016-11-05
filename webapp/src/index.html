@@ -58,7 +58,7 @@
   <span class="team-penalty">{{penalty}}</span>
   <div class="results">
 {{#each problems}}
-    <span class="problem-result problem-{{this.id}}" data-problem-id="{{this.id}}">
+    <span class="problem-result problem-{{this.id}}" data-problem-id="{{this.id}}" data-team-id="{{../id}}">
       <b class="problem-result-text"></b>
     </span>
 {{/each}}

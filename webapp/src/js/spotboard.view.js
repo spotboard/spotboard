@@ -367,7 +367,8 @@ function($, Handlebars, Spotboard) {
         var problemsNewlySolved = [];
         $team.find(".problem-result").each( function(index) {
             // TODO index를 attr로 선택하도록
-            var problemStat = teamStatus.getProblemStatus(problems[index]);
+            var problem = problems[index];
+            var problemStat = teamStatus.getProblemStatus(problem);
 
             $(this).removeClass('solved failed pending');
             if(problemStat.isAccepted()) {
@@ -376,11 +377,30 @@ function($, Handlebars, Spotboard) {
                 if($team.find('.balloon.problem-' + index).length == 0)
                     problemsNewlySolved.push(problemStat);
 
+                // tool text for the run
+                // NOTE: if first solved, additional suffix follows. (see .solved-first:after CSS)
+                var penalty_string = 'Solved at ' + problemStat.getSolvedTime() + ' min';
+                $(this).attr('data-balloon', penalty_string);
+                $(this).attr('data-balloon-pos', 'down');
+
                 // detect if first solved
                 if(Spotboard.config['show_first_solve']) {
-                    var problemSummary = contest.getProblemSummary(problems[index]);
+                    var problemSummary = contest.getProblemSummary(problem);
+
                     if(problemSummary.isFirstSolved(problemStat)) {
                         $(this).addClass('solved-first')
+                        var solvedFirstTime = problemStat.getSolvedTime();
+
+                        // invalidate all other previous first-solved runs
+                        // TODO how to do it elegantly without accessing via jQuery?
+                        // TODO check performance as well, worst case complexity is O(N^2)
+                        $('.problem-result' + '.solved-first' + '.problem-' + index).each(function() {
+                            var teamIdOther = $(this).attr('data-team-id');
+                            var problemStatOther = contest.getTeamStatus(teamIdOther).getProblemStatus(problem);
+                            // TODO remove this business logic into somewhere proper (e.g. contest.coffee)
+                            if(problemStatOther.getSolvedTime() != solvedFirstTime)
+                                $(this).removeClass('solved-first');
+                        });
                     }
                 }
             }
@@ -395,15 +415,6 @@ function($, Handlebars, Spotboard) {
             if(problemStat.getFailedAttempts() > 0) {
                 $(this).find('.problem-result-text')
                   .text(sign + problemStat.getFailedAttempts());
-            }
-            if(problemStat.isAccepted()) {
-              //$(this).attr('data-balloon', problemStat.getPenaltyMemoString());
-                var penalty_string = 'Solved at ' + problemStat.getSolvedTime() + ' min';
-                if(Spotboard.config['show_first_solve'] && $(this).hasClass('solved-first')) {
-                    penalty_string += ' (First Solve)';
-                }
-                $(this).attr('data-balloon', penalty_string);
-                $(this).attr('data-balloon-pos', 'down');
             }
         });
 
