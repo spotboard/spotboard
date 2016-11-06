@@ -402,7 +402,6 @@ div.team {
 
 #wrapper:not(.award-mode) .team:hover {
     background-color: #E2F08B;
-    cursor: pointer;
 }
 
 .team-rank {

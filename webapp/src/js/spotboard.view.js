@@ -379,7 +379,7 @@ function($, Handlebars, Spotboard) {
 
                 // tool text for the run
                 // NOTE: if first solved, additional suffix follows. (see .solved-first:after CSS)
-                var penalty_string = 'Solved at ' + problemStat.getSolvedTime() + ' min';
+                var penalty_string = 'Solved at ' + problemStat.getSolvedTime() + ' min.';
                 $(this).attr('data-balloon', penalty_string);
                 $(this).attr('data-balloon-pos', 'down');
 

@@ -78,7 +78,7 @@ class Problem
 
     toString : ->
         s = "Problem #{@name}"
-        if @title and @title != s
+        if @title and @title != @name
             s += " : #{@title}"
         return s
 
