@@ -704,6 +704,10 @@ div.team {
     font-weight: 400;
 }
 
+.award-medalist .team-name {
+    cursor: pointer;
+}
+
 .award-medalist .team-name:after {
     content: "";
     display: inline-block;

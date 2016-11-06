@@ -337,9 +337,9 @@ function($, Spotboard) {
          * finalized 된 '수상'팀에 한해 클릭 이벤트를 추가한다.
          * 혹시라도 finalize된 이후 슬라이드가 실수로 넘어간 경우, 이를 다시 보여줄 때 사용한다.
          */
-        $teamlist.on('click', '.team.finalized.award-medalist', function(e) {
+        $teamlist.on('click', '.team.finalized.award-medalist .team-name', function(e) {
             e.preventDefault();
-            var teamId = $(this).data('team-id');
+            var teamId = $(this).parents(".team").data('team-id');
             Spotboard.Award.AwardSlide.showForTeam(teamId);
         });
     };
