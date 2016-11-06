@@ -1,121 +1,135 @@
 [
     {
-        "id": 22,
+        "id": 70,
         "rank": "대상",
         "icon": "crown",
         "group": "서울대학교",
-        "name": "cpp"
+        "name": "ACGTeam"
     },
     {
-        "id": 55,
+        "id": 2,
         "rank": "금상",
         "icon": "gold",
         "group": "KAIST",
-        "name": "OriGoGi"
+        "name": "hYEAHyea"
     },
     {
-        "id": 47,
+        "id": 60,
         "rank": "금상",
         "icon": "gold",
         "group": "고려대학교",
-        "name": "Let Myungwoo go WF"
+        "name": "Never Give Up"
     },
     {
-        "id": 75,
+        "id": 62,
         "rank": "금상",
         "icon": "gold",
         "group": "연세대학교",
-        "name": "Underwood"
+        "name": "Real Recognize Real"
     },
     {
-        "id": 17,
+        "id": 65,
         "rank": "은상",
         "icon": "silver",
         "group": "POSTECH",
-        "name": "CHOCOLATE"
+        "name": "Master Spark"
     },
     {
-        "id": 69,
+        "id": 37,
         "rank": "은상",
         "icon": "silver",
-        "group": "한양대학교",
-        "name": "StyleShare"
-    },
-    {
-        "id": 67,
-        "rank": "은상",
-        "icon": "silver",
-        "group": "경희대학교",
-        "name": "SoMacAir"
-    },
-    {
-        "id": 40,
-        "rank": "동상",
-        "icon": "bronze",
-        "group": "서강대학교",
-        "name": "Kim N Kang"
-    },
-    {
-        "id": 66,
-        "rank": "동상",
-        "icon": "bronze",
-        "group": "숭실대학교",
-        "name": "Snorlax"
-    },
-    {
-        "id": 13,
-        "rank": "동상",
-        "icon": "bronze",
-        "group": "인하대학교",
-        "name": "Boarding Gozy"
-    },
-    {
-        "id": 41,
-        "rank": "동상",
-        "icon": "bronze",
         "group": "UNIST",
-        "name": "KimchiManWon"
+        "name": "The Hedgehogs"
+    },
+    {
+        "id": 43,
+        "rank": "은상",
+        "icon": "silver",
+        "group": "인하대학교",
+        "name": "HerosNeverDie"
     },
     {
         "id": 78,
-        "rank": "Naver 특별상",
-        "icon": "star",
-        "group": "서울대학교",
-        "name": "Wook Norris"
+        "rank": "동상",
+        "icon": "bronze",
+        "group": "숭실대학교",
+        "name": "BuzzerBeater"
     },
     {
-        "id": 29,
-        "rank": "Naver 특별상",
-        "icon": "star",
-        "group": "서울과학기술대학교",
-        "name": "EC5"
+        "id": 58,
+        "rank": "동상",
+        "icon": "bronze",
+        "group": "서강대학교",
+        "name": "Trilobite"
     },
     {
-        "id": 52,
-        "rank": "Devsisters 특별상",
-        "icon": "star",
-        "group": "POSTECH",
-        "name": "No TTang"
+        "id": 76,
+        "rank": "동상",
+        "icon": "bronze",
+        "group": "중앙대학교",
+        "name": "Zaranara murymury"
     },
     {
-        "id": 7,
-        "rank": "Devsisters 특별상",
-        "icon": "star",
+        "id": 5,
+        "rank": "동상",
+        "icon": "bronze",
         "group": "한양대학교",
-        "name": "BALOHAM"
+        "name": "NaHonjaMyWay"
     },
     {
-        "id": 42,
-        "rank": "Nexon 특별상",
+        "id": 81,
+        "rank": "특별상",
         "icon": "star",
         "group": "서울대학교",
-        "name": "KimchiWarrior"
+        "name": "Hello World Final!"
     },
     {
-        "id": 1,
-        "rank": "Nexon 특별상",
+        "id": 56,
+        "rank": "특별상",
+        "icon": "star",
+        "group": "서울대학교",
+        "name": "PLEASE OPEN TESTDATA"
+    },
+    {
+        "id": 48,
+        "rank": "특별상",
+        "icon": "star",
+        "group": "KAIST",
+        "name": "Is this hard mode?"
+    },
+    {
+        "id": 15,
+        "rank": "특별상",
+        "icon": "star",
+        "group": "부산대학교",
+        "name": "DoongDooRooDaRaDang"
+    },
+    {
+        "id": 44,
+        "rank": "특별상",
+        "icon": "star",
+        "group": "서울대학교",
+        "name": "Kimchi rains from above"
+    },
+    {
+        "id": 84,
+        "rank": "특별상",
         "icon": "star",
         "group": "고려대학교",
-        "name": "ACRush"
+        "name": "SRC"
+    },
+    {
+        "id": 11,
+        "rank": "특별상",
+        "icon": "star",
+        "group": "국민대학교",
+        "name": "HISASIBURI"
+    },
+    {
+        "id": 59,
+        "rank": "특별상",
+        "icon": "star",
+        "group": "충북대학교",
+        "name": "MAZIMAK_IPSE"
     }
 ]
