@@ -10,7 +10,9 @@ config =
     environment : 'develop',
 
     /**
-     * The paths ${apiBase}/runs.json, ${apiBase}/contest.json, etc. should be accessible.
+     * The following paths should be accessible:
+     *    ${apiBase}/runs.json
+     *    ${apiBase}/contest.json
      */
     apiBase : feed_server_path,
 
@@ -88,7 +90,7 @@ config =
     /**
      * Specify the teams to exclude from the scoreboard, as a function or a list of team id.
      *
-     * e.g. function() { ... }
+     * e.g. function(team) { ... }
      * e.g. [1000, 1001, 1002]
      */
     exclude_teams : function(team) {
@@ -98,12 +100,38 @@ config =
     },
 
     /**
+     * Specify additional foreign or extra teams, as a function or a list of team id.
+     *
+     * In award ceremony, revealing of foreign teams will be postponed until
+     * all the other domestic teams are revealed.
+     *
+     * e.g. function(team) { ... }
+     * e.g. [2000, 2001]
+     */
+    //foreign_teams : [ 2000, 2001 ],
+    foreign_teams : function(team) {
+        /* an example config */
+        var foreign_teams_list = [2000, 2001];
+        var foreign_affiliations = [
+            "Peiking University",
+            "National Taiwan University",
+            "National Chiao Tung University"
+        ];
+
+        var teamId = team.getId(),
+            affiliation = team.getGroup();
+        if (foreign_teams_list.indexOf(teamId) >= 0) return true;
+        if (foreign_affiliations.indexOf(affiliation) >= 0) return true;
+        return false;
+    },
+
+    /**
      * Specify whether to launch award mode at startup.
      * NOTE: While this option is off, one can enter to award mode by adding '?award=true' into URL.
      */
     award_mode         : false,
 
-    /** Specify whether to hide the name and affilation for unrevealed team in award mode. */
+    /** Specify whether to hide the name and affiliation for unrevealed team in award mode. */
     award_hide_name    : true,
 
     /**
@@ -143,16 +171,10 @@ config =
      * In this case, function takes a single argument 'teamStatus', of type TeamStatus.
      */
     award_focus_blinking : function(teamStatus) {
-      // use blinking effect only if # of problems solved is more than 7.
+      // use blinking effect only if # of problems solved is more than 7
+      // or current ranking of the team is less than 10.
       var solved = teamStatus.getTotalSolved();
-      return solved >= 7;
+      var currentRank = teamStatus.getRank();
+      return solved >= 7 || currentRank <= 10;
     },
-
-    /**
-     * Specify additional foreign or extra teams, as a list of team id.
-     *
-     * In award ceremony, revealing of foreign teams will be postponed until
-     * all the other domestic teams are revealed.
-     */
-    foreign_teams : [ 2000, 2001 ]
 };

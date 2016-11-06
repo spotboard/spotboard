@@ -144,7 +144,21 @@ function($, Handlebars, Spotboard) {
 
         // 해외팀 처리
         if(Spotboard.config['foreign_teams']) {
-            $.each(Spotboard.config['foreign_teams'], function(idx, val) {
+            var foreign_teams = Spotboard.config['foreign_teams'];
+            if(typeof foreign_teams === "function") {
+                // as team filters
+                is_foreign_team = foreign_teams;
+                foreign_teams = [];
+                for(team of contest.getTeams()) {
+                    if(!team) continue;
+                    if(is_foreign_team(team)) {
+                        foreign_teams.push(team.getId());
+                    }
+                }
+            }
+
+            // list of foreign team ids are given
+            $.each(foreign_teams, function(idx, val) {
                 $("#team-" + val).addClass('foreign');
             });
         }
