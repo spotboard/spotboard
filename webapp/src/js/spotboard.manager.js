@@ -168,7 +168,7 @@ function(Spotboard, $)  {
 
         });
 
-        if(!fed) $df.resolve('nofeed');    // no more run
+        if(!fed) $df.reject('nofeed');    // no more run
         return $df;
     };
 

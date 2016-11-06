@@ -408,7 +408,7 @@ function($, Spotboard) {
             // TODO refactor & decouple feeding and animation
             // Spotboard.Manager 로의 의존성도 제거해야 함.
             var run = null;
-            var fed = Spotboard.Manager.feedSingleRun(
+            var $fed_df = Spotboard.Manager.feedSingleRun(
                 // TODO 중복
                 function updateAnimation(run, remainCount) {
                     var animation = new Spotboard.Animation.UpdateRun(run);
@@ -423,7 +423,14 @@ function($, Spotboard) {
                 // TODO 중복 END
             );
 
-            if(!fed) return 'break';
+            if($fed_df.state() == 'rejected') {
+                // it means that there is no more run to feed.
+                if(console) {
+                    console.log("WARNING: There is no more run to feed -- something wrong?\n" +
+                                "teamId = " + teamId + ", problemId = " + problemId);
+                }
+                return 'break';
+            }
             return [teamId, problemId]; // continue
         };
 
