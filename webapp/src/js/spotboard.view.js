@@ -147,9 +147,11 @@ function($, Handlebars, Spotboard) {
             var foreign_teams = Spotboard.config['foreign_teams'];
             if(typeof foreign_teams === "function") {
                 // as team filters
-                is_foreign_team = foreign_teams;
+                var is_foreign_team = foreign_teams;
+                var all_teams = contest.getTeams();
                 foreign_teams = [];
-                for(team of contest.getTeams()) {
+                for(var id in all_teams) {
+                    var team = all_teams[id];
                     if(!team) continue;
                     if(is_foreign_team(team)) {
                         foreign_teams.push(team.getId());
