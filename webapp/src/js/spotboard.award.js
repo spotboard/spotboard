@@ -373,13 +373,13 @@ function($, Spotboard) {
         //
         // DOM manipulation이 많아서 다소 느릴 수 있음..
 
-        while(true) {
+        var forward_step = function() {
             var $team = Spotboard.Award.getNextTeam();
-            if(! $team) break;
+            if(! $team) return 'break';
 
             var teamCurrentRank = $team.index();
             if(teamCurrentRank < rankBegin)
-                break;
+                return 'break';
 
             // hidden된 팀 정보 공개.
             // 빨리감기 시뮬레이션에서는 계속 숨길 수 있다 (finalize될 때에만 공개).
@@ -390,7 +390,7 @@ function($, Spotboard) {
             if(!$pending) {
                 Spotboard.Award.revealTeamDisplayIfHidden($team, /*animation*/false);
                 Spotboard.Award.finalizeTeam($team);
-                continue;
+                return [teamId, 'finalize']; // continue
             }
 
             if(console) {
@@ -423,8 +423,22 @@ function($, Spotboard) {
                 // TODO 중복 END
             );
 
-            if(!fed) break;
+            if(!fed) return 'break';
+            return [teamId, problemId]; // continue
         };
+
+        // equivalent to the following, but let DOM be rendered in-place.
+        /* while(true) { if(forward_step() == 'break') break; } */
+        var forward_step_fn = (function() {
+            while (true) {
+                var r = forward_step();
+                if(r == 'break') break; /* DONE */
+                if(r[1] == 'finalize') {
+                    return setTimeout(forward_step_fn, 0); // doEvents()
+                }
+            }
+        });
+        forward_step_fn();
     };
 
 
