@@ -113,9 +113,13 @@ config =
         /* an example config */
         var foreign_teams_list = [2000, 2001];
         var foreign_affiliations = [
-            "Peiking University",
+            "Peking University",
             "National Taiwan University",
-            "National Chiao Tung University"
+            "National Chiao Tung University",
+            "National Taiwan Normal University",
+            "The Chinese Univeersity of Hong Kong",
+            "Kyoto University",
+            "University of Aizu"
         ];
 
         var teamId = team.getId(),
@@ -148,9 +152,11 @@ config =
      * according to the number of problems solved.
      */
     award_animation_speeds: [
-      { solved: 7, fastFlipSpeed: 600, slowFlipSpeed: 1400, utuSpeedFunc: function(up_cnt) { return Math.min(500 + up_cnt * 100, 2000); } },
-      { solved: 3, fastFlipSpeed: 350, slowFlipSpeed: 650,  utuSpeedFunc: function(up_cnt) { return Math.min(250 + up_cnt * 50, 3000); } },
-      { solved: 0, fastFlipSpeed: 250, slowFlipSpeed: 450,  utuSpeedFunc: function(up_cnt) { return Math.min(150 + up_cnt * 30, 1000); } }
+      { solved: 10, fastFlipSpeed: 1200, slowFlipSpeed: 2000, utuSpeedFunc: function(up_cnt) { return Math.min(500 + up_cnt * 100, 2000); } },
+      { solved: 9,  fastFlipSpeed: 800,  slowFlipSpeed: 1200, utuSpeedFunc: function(up_cnt) { return Math.min(500 + up_cnt * 100, 2000); } },
+      { solved: 7,  fastFlipSpeed: 400,  slowFlipSpeed: 600,  utuSpeedFunc: function(up_cnt) { return Math.min(500 + up_cnt * 100, 2000); } },
+      { solved: 3,  fastFlipSpeed: 200,  slowFlipSpeed: 300,  utuSpeedFunc: function(up_cnt) { return Math.min(250 + up_cnt * 50, 3000); } },
+      { solved: 0,  fastFlipSpeed: 200,  slowFlipSpeed: 300,  utuSpeedFunc: function(up_cnt) { return Math.min(150 + up_cnt * 30, 1000); } }
     ],
 
     /**
