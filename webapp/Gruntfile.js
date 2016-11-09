@@ -3,6 +3,21 @@
 
 module.exports = function (grunt) {
     grunt.initConfig({
+        pkg: grunt.file.readJSON("package.json"),
+        banner : (
+            '/*! Spotboard <%= pkg.version %> | https://github.com/spotboard */'
+        ),
+        usebanner: {
+            dist: {
+                options: {
+                    position: 'top',
+                    banner: '<%= banner %>',
+                },
+                files: {
+                    src: [ 'dist/js/spotboard-all.min.js' ]
+                }
+            }
+        },
         coffee: {
             compile: {
                 files: {
@@ -54,7 +69,8 @@ module.exports = function (grunt) {
                 dest: 'dist/config.js',
                 options: {
                     process: function(content, srcpath) {
-                        return content + '\n\n' + 'config.environment = "production";\n';
+                        return content + '\n\n' +
+                            'config.environment = "production";\n';
                     }
                 }
             }
@@ -101,10 +117,11 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-connect');
     grunt.loadNpmTasks('grunt-connect-proxy');
+    grunt.loadNpmTasks('grunt-banner');
 
 
     // register tasks
-    grunt.registerTask('default', [ 'coffee', 'requirejs', 'copy' ]);
+    grunt.registerTask('default', [ 'coffee', 'requirejs', 'copy', 'usebanner' ]);
     grunt.registerTask('server', [ 'default', 'connect:prod' ]);
     grunt.registerTask('dev', [ 'coffee', 'configureProxies:dev', 'connect:dev', 'watch' ]);
 };
