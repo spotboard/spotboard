@@ -16,6 +16,14 @@ Demo
     [[2015]](https://youtu.be/kF5RR2TXgkk?t=287)
     [[2016]](https://www.facebook.com/icpckorea/videos/1249185941806137/)
 
+Usage
+-----
+
+Download [a webapp package](https://github.com/spotboard/spotboard/releases), and serve it using any HTTP server.
+We recommend `http-server -c-1` (disable cache) or `nginx`.
+
+You'll also need to set up the feedserver (PC^2 or Domjudge), as described below.
+
 
 Usage (for PC^2)
 ----------------
