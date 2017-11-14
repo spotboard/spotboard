@@ -5,7 +5,7 @@ PACKAGE_VERSION=$(shell cat package.json | grep version | head -1 | awk -F: '{ p
 build: clean test dist
 
 dist:
-	grunt
+	npm run build
 
 dist-package: dist
 	tar -czf spotboard-webapp-$(PACKAGE_VERSION).tar.gz --transform 's,^dist,spotboard-webapp-$(PACKAGE_VERSION),' dist
@@ -13,14 +13,14 @@ dist-package: dist
 
 server:
 	echo 'Launching Prod Server (dist/) ...'
-	grunt server
+	npm run server
 
 dev:
 	echo 'Launching Dev Server ...'
-	grunt dev
+	npm start
 
 test:
-	mocha --compilers coffee:coffee-script/register
+	npm test
 
 clean:
 	rm -rf src/js/contest.js
