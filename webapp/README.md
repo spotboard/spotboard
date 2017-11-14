@@ -9,20 +9,19 @@ After activating a node environment, we can install the dependencies.
 
 ```
 npm install
-npm install -g grunt-cli
 ```
 
 Then, build the application:
 
 ```
-grunt
+npm run build
 ```
 
 The directory `dist/` will contain the file tree of the built web application,
 which can be served using *static* web servers.
 For web servers, we recommend [`http-server -c-1`][http-server] (disable cache) or [nginx][nginx].
 
-For development, try `grunt dev`.
+For development, try `npm start`.
 
 
 [nvm]: https://github.com/creationix/nvm
