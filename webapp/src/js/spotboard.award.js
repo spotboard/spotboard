@@ -52,17 +52,18 @@ function($, Spotboard) {
 
             // construct a dict from (problem title) -> id,
             // e.g. {'A' : 1, 'B' : 2, ...}
-            var problemTitleToId = {};
+            var problemToId = {};
             for(var i = 0; i < problems.length; ++ i) {
-                var problemTitle = problems[i].title;
-                problemTitleToId[problemTitle] = problems[i].id;
+                var problemName = problems[i].name, problemTitle = problems[i].title;
+                problemToId[problemName] = problems[i].id;
+                problemToId[problemTitle] = problems[i].id;
                 // PC^2 default is 'Problem A' or something like this
-                problemTitleToId[problemTitle.replace(/^Problem /, '')] = problems[i].id;
+                problemToId[problemTitle.replace(/^Problem /, '')] = problems[i].id;
             }
             // set up priority (larger is earlier)
             for(var i = 0; i < priority.length; ++ i) priority[i] = -i;
             for(var i = 0; i < order.length; ++ i) {
-                var id = problemTitleToId[order[i]] || parseInt(order[i]);
+                var id = problemToId[order[i]] || parseInt(order[i]);
                 priority[id] += (order.length - i) * 10000;
             }
             return priority;
