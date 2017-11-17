@@ -1,11 +1,14 @@
 /* vim: set expandtab:
  * vim: set ts=4 sts=4 sw=4: */
 
+var package = require('./package.json');
+console.log("Spotboard " + package.version + "\n");
+
 module.exports = function (grunt) {
     grunt.initConfig({
-        pkg: grunt.file.readJSON("package.json"),
+        pkg: package,
         banner : (
-            '/*! Spotboard <%= pkg.version %> | https://github.com/spotboard */'
+            '/*! Spotboard <%= pkg.version %> | https://github.com/spotboard/ */'
         ),
         usebanner: {
             dist: {
@@ -15,6 +18,20 @@ module.exports = function (grunt) {
                 },
                 files: {
                     src: [ 'dist/js/spotboard-all.min.js' ]
+                }
+            }
+        },
+        "file-creator": {
+            metadata: {
+                // generate metadata.js
+                'src/js/metadata.js': function(fs, fd, done) {
+                    var exec = require('child_process').exec;
+                    fs.writeSync(fd, `
+                        /* Spotboard metadata (AUTO-GENERATED) */
+                        var __meta__ = {};
+                        __meta__.__version__ = "${package.version}";
+                    `);
+                    done();
                 }
             }
         },
@@ -118,10 +135,11 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-connect');
     grunt.loadNpmTasks('grunt-connect-proxy');
     grunt.loadNpmTasks('grunt-banner');
+    grunt.loadNpmTasks('grunt-file-creator');
 
 
     // register tasks
-    grunt.registerTask('default', [ 'coffee', 'requirejs', 'copy', 'usebanner' ]);
+    grunt.registerTask('default', [ 'file-creator', 'coffee', 'requirejs', 'copy', 'usebanner' ]);
     grunt.registerTask('server', [ 'default', 'connect:prod' ]);
-    grunt.registerTask('dev', [ 'coffee', 'configureProxies:dev', 'connect:dev', 'watch' ]);
+    grunt.registerTask('dev', [ 'file-creator', 'coffee', 'configureProxies:dev', 'connect:dev', 'watch' ]);
 };

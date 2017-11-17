@@ -7,6 +7,7 @@ require.config({
         'handlebars' : 'lib/handlebars'
     },
     shim: {
+        'metadata' : { exports : '__meta__' },
         'handlebars' : { exports : 'Handlebars' },
         'jquery.hotkeys' : { deps : ['jquery'] },
         'jquery.slimscroll' : { deps : ['jquery'], exports : 'jQuery.fn.slimScroll' },

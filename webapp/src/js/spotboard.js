@@ -1,11 +1,17 @@
 define([
-    'jquery'
+    'jquery',
+    'metadata'
 ],
-function(jQuery) {
+function(jQuery, __meta__) {
 
-    // 공통 네임스페이스
+    // The common namespace: 'Spotboard'
     var Spotboard = {};
     window['Spotboard'] = Spotboard;
+
+    // inject metadata
+    Spotboard.__version__ = __meta__.__version__;
+    if(console) console.log("Spotboard " + Spotboard.__version__);
+
 
     /* config 로드
     *

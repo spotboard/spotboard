@@ -23,6 +23,13 @@ function($, Handlebars, Spotboard) {
         $("#system-information").text(
             contest.getSystemName() + " " + contest.getSystemVersion()
         );
+
+        if (Spotboard.__version__) {
+          var version = "v" + Spotboard.__version__;
+          if (Spotboard.config.environment === 'develop')
+              version += "-devel";
+          $("#spotboard-version").text(version);
+        }
     };
 
     /**
