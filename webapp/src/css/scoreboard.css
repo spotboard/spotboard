@@ -215,8 +215,7 @@ sup {
 }
 
 .no-animation #feed-one-icon,
-.no-animation #feed-auto-icon,
-.no-animation #notify-icon {
+.no-animation #feed-auto-icon {
     display: none;
 }
 
