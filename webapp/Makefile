@@ -1,4 +1,4 @@
-.PHONY: build dist test dist-package
+.PHONY: build dist test dist-package server dev test clean
 
 PACKAGE_VERSION=$(shell cat package.json | grep version | head -1 | awk -F: '{ print $$2 }' | sed 's/[ ",]//g')
 
@@ -24,5 +24,6 @@ test:
 
 clean:
 	rm -rf src/js/contest.js
+	rm -rf src/js/metadata.js
 	rm -rf spotboard-*.tar.gz
 	rm -rf dist/
