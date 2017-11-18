@@ -324,6 +324,19 @@ function($, Spotboard) {
         $.when(Spotboard.Award.AwardSlide.fetch())
          .then(function() {
             $(Spotboard).trigger('ready');
+
+            // award_slide.json에 있는 icon 파일 이름에 따라 css style을 추가한다.
+            var added = {};
+            var $style= $('<style type="text/css" id="award-medal-icon"></style>');
+            $.each(Spotboard.Award.AwardSlide.data, function(idx, val) {
+                var icon = val.icon;
+                if (!icon || !added[icon]) return;
+                added[icon] = true;
+                $style.append(
+'.award-medalist.'+icon+' .team-name:after { background-image: url("../img/award/'+icon+'.png"); }\n'
+                );
+            });
+            $('head').append($style);
          });
     };
 
