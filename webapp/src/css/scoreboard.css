@@ -721,22 +721,6 @@ div.team {
     background-position: center center;
 }
 
-.award-medalist.bronze .team-name:after {
-    background-image: url(../img/award_bronze.png);
-}
-.award-medalist.silver .team-name:after {
-    background-image: url(../img/award_silver.png);
-}
-.award-medalist.gold .team-name:after {
-    background-image: url(../img/award_gold.png);
-}
-.award-medalist.crown .team-name:after {
-    background-image: url(../img/award_crown.png);
-}
-.award-medalist.star .team-name:after {
-    background-image: url(../img/award_star.png);
-}
-
 .team-represents {
     display: none;
     padding: 0 0.6em 0 0;
