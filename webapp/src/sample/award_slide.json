@@ -1,135 +1,142 @@
 [
     {
-        "id": 70,
+        "id": 64,
         "rank": "대상",
         "icon": "crown",
         "group": "서울대학교",
-        "name": "ACGTeam"
+        "name": "MolaMola"
     },
     {
-        "id": 2,
+        "id": 54,
         "rank": "금상",
         "icon": "gold",
         "group": "KAIST",
-        "name": "hYEAHyea"
+        "name": "Deobureo Minkyu Party"
     },
     {
-        "id": 60,
-        "rank": "금상",
-        "icon": "gold",
-        "group": "고려대학교",
-        "name": "Never Give Up"
-    },
-    {
-        "id": 62,
-        "rank": "금상",
-        "icon": "gold",
-        "group": "연세대학교",
-        "name": "Real Recognize Real"
-    },
-    {
-        "id": 65,
+        "id": 73,
         "rank": "은상",
         "icon": "silver",
+        "group": "고려대학교",
+        "name": "asdf"
+    },
+    {
+        "id": 9,
+        "rank": "은상",
+        "icon": "silver",
+        "group": "UNIST",
+        "name": "MDMA"
+    },
+    {
+        "id": 8,
+        "rank": "은상",
+        "icon": "silver",
+        "group": "숭실대학교",
+        "name": "Today_Is_YoungJeong_Birthday"
+    },
+    {
+        "id": 70,
+        "rank": "동상",
+        "icon": "bronze",
+        "group": "한양대학교",
+        "name": "estu"
+    },
+    {
+        "id": 53,
+        "rank": "동상",
+        "icon": "bronze",
+        "group": "서강대학교",
+        "name": "BlueJoker"
+    },
+    {
+        "id": 27,
+        "rank": "동상",
+        "icon": "bronze",
         "group": "POSTECH",
         "name": "Master Spark"
     },
     {
-        "id": 37,
-        "rank": "은상",
-        "icon": "silver",
-        "group": "UNIST",
-        "name": "The Hedgehogs"
-    },
-    {
-        "id": 43,
-        "rank": "은상",
-        "icon": "silver",
-        "group": "인하대학교",
-        "name": "HerosNeverDie"
-    },
-    {
-        "id": 78,
+        "id": 75,
         "rank": "동상",
         "icon": "bronze",
-        "group": "숭실대학교",
-        "name": "BuzzerBeater"
+        "group": "전남대학교",
+        "name": "DDiyoooooong"
     },
     {
-        "id": 58,
-        "rank": "동상",
-        "icon": "bronze",
-        "group": "서강대학교",
-        "name": "Trilobite"
-    },
-    {
-        "id": 76,
-        "rank": "동상",
-        "icon": "bronze",
-        "group": "중앙대학교",
-        "name": "Zaranara murymury"
-    },
-    {
-        "id": 5,
-        "rank": "동상",
-        "icon": "bronze",
-        "group": "한양대학교",
-        "name": "NaHonjaMyWay"
-    },
-    {
-        "id": 81,
-        "rank": "특별상",
+        "id": 68,
+        "rank": "장려상",
         "icon": "star",
-        "group": "서울대학교",
-        "name": "Hello World Final!"
+        "group": "연세대학교",
+        "name": "NP_Not_Polynomial"
+    },
+    {
+        "id": 36,
+        "rank": "장려상",
+        "icon": "star",
+        "group": "아주대학교",
+        "name": "BloodTrail"
     },
     {
         "id": 56,
-        "rank": "특별상",
+        "rank": "장려상",
         "icon": "star",
-        "group": "서울대학교",
-        "name": "PLEASE OPEN TESTDATA"
+        "group": "한국항공대학교",
+        "name": "yohohohohohohohohohohohoyo"
     },
     {
-        "id": 48,
-        "rank": "특별상",
-        "icon": "star",
-        "group": "KAIST",
-        "name": "Is this hard mode?"
-    },
-    {
-        "id": 15,
-        "rank": "특별상",
-        "icon": "star",
-        "group": "부산대학교",
-        "name": "DoongDooRooDaRaDang"
-    },
-    {
-        "id": 44,
-        "rank": "특별상",
-        "icon": "star",
-        "group": "서울대학교",
-        "name": "Kimchi rains from above"
-    },
-    {
-        "id": 84,
-        "rank": "특별상",
-        "icon": "star",
-        "group": "고려대학교",
-        "name": "SRC"
-    },
-    {
-        "id": 11,
-        "rank": "특별상",
-        "icon": "star",
-        "group": "국민대학교",
-        "name": "HISASIBURI"
-    },
-    {
-        "id": 59,
-        "rank": "특별상",
+        "id": 30,
+        "rank": "장려상",
         "icon": "star",
         "group": "충북대학교",
-        "name": "MAZIMAK_IPSE"
+        "name": "molla_yo"
+    },
+    {
+        "id": 78,
+        "rank": "장려상",
+        "icon": "star",
+        "group": "GIST",
+        "name": "502_Bad_Gateway"
+    },
+    {
+        "id": 52,
+        "rank": "특별상 - 넥슨",
+        "icon": "star",
+        "group": "서울대학교",
+        "name": "ACGTeam"
+    },
+    {
+        "id": 4,
+        "rank": "특별상 - 삼성SDS",
+        "icon": "star",
+        "group": "서울대학교",
+        "name": "Military Reserve Force"
+    },
+    {
+        "id": 38,
+        "rank": "특별상 - 네이버",
+        "icon": "star",
+        "group": "서울대학교",
+        "name": "!!!!!!We are first team!!!!!!"
+    },
+    {
+        "id": 71,
+        "rank": "특별상 - 넥슨",
+        "icon": "star",
+        "group": "서울대학교",
+        "name": "Wrong answer on test 87"
+    },
+    {
+        "id": 39,
+        "rank": "특별상 - 삼성SDS",
+        "icon": "star",
+        "group": "KAIST",
+        "name": "Please Support Python"
+    },
+    {
+        "id": 50,
+        "rank": "특별상 - 네이버",
+        "icon": "star",
+        "group": "고려대학교",
+        "name": "DoWF"
     }
 ]

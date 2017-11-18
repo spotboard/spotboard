@@ -1,107 +1,425 @@
 {
-    "title": "2016 ACM-ICPC Asia Daejeon Regional Contest",
-    "systemName": "DOMJudge v5.1.2 Daejeon",
-    "systemVersion": "",
     "problems": [
-        { "id": 0, "name": "A", "color": "red", "title": "Bridge Park" },
-        { "id": 1, "name": "B", "color": "orange", "title": "Football" },
-        { "id": 2, "name": "C", "color": "white", "title": "House Rental" },
-        { "id": 3, "name": "D", "color": "blue", "title": "Independent Edges" },
-        { "id": 4, "name": "E", "color": "yellow", "title": "Memory Cell" },
-        { "id": 5, "name": "F", "color": "ivory", "title": "Meteorites" },
-        { "id": 6, "name": "G", "color": "deeppink", "title": "Percolation" },
-        { "id": 7, "name": "H", "color": "brown", "title": "Power Supply" },
-        { "id": 8, "name": "I", "color": "darkgreen", "title": "Robot" },
-        { "id": 9, "name": "J", "color": "pink", "title": "Room" },
-        { "id": 10, "name": "K", "color": "skyblue", "title": "Rounding" },
-        { "id": 11, "name": "L", "color": "purple", "title": "Virus" }
+        {
+            "color": "ivory",
+            "id": 0,
+            "name": "A",
+            "title": "Broadcast Stations"
+        },
+        {
+            "color": "darkgreen",
+            "id": 1,
+            "name": "B",
+            "title": "Connect3"
+        },
+        {
+            "color": "blue",
+            "id": 2,
+            "name": "C",
+            "title": "Game Map"
+        },
+        {
+            "color": "yellow",
+            "id": 3,
+            "name": "D",
+            "title": "Happy Number"
+        },
+        {
+            "color": "purple",
+            "id": 4,
+            "name": "E",
+            "title": "How Many to Be Happy"
+        },
+        {
+            "color": "red",
+            "id": 5,
+            "name": "F",
+            "title": "Philosopher's Walk"
+        },
+        {
+            "color": "orange",
+            "id": 6,
+            "name": "G",
+            "title": "Rectilinear Regions"
+        },
+        {
+            "color": "gray",
+            "id": 7,
+            "name": "H",
+            "title": "Rock Paper Scissors"
+        },
+        {
+            "color": "lime",
+            "id": 8,
+            "name": "I",
+            "title": "Slot Machines"
+        },
+        {
+            "color": "white",
+            "id": 9,
+            "name": "J",
+            "title": "Strongly Matchable"
+        },
+        {
+            "color": "pink",
+            "id": 10,
+            "name": "K",
+            "title": "Untangling Chain"
+        },
+        {
+            "color": "lightblue",
+            "id": 11,
+            "name": "L",
+            "title": "Vacation Plans"
+        }
     ],
+    "systemName": "DOMJudge",
+    "systemVersion": "",
     "teams": [
-        { "id": 1, "name": "Nooglers+1 (Ulsan National Institute of Science and Technology)" },
-        { "id": 2, "name": "hYEAHyea (KAIST)" },
-        { "id": 3, "name": "Flareon (Seoul National University)" },
-        { "id": 4, "name": "Codingmothae (Korea Aerospace University)" },
-        { "id": 5, "name": "NaHonJaMyWay (Hanyang University)" },
-        { "id": 6, "name": "PSPartner (Dong-A University)" },
-        { "id": 7, "name": "Here comes NTNU tuna (National Taiwan Normal University)" },
-        { "id": 8, "name": "3KB (Kyonggi University)" },
-        { "id": 9, "name": "DaGreatHappyNaru (Gwangju Institute of Science and Technology)" },
-        { "id": 10, "name": "Heroesneverdie#2 (Soongsil University)" },
-        { "id": 11, "name": "HISASIBURI (Kookmin University)" },
-        { "id": 12, "name": "PUUUNGSEON (Korea University)" },
-        { "id": 13, "name": "KOONG KWANG KWANG (Hanyang University ERICA Campus)" },
-        { "id": 14, "name": "Han_Gil (Kookmin University)" },
-        { "id": 15, "name": "DoongDooRooDaRaDang (Pusan National University)" },
-        { "id": 16, "name": "weasle (Hongik University)" },
-        { "id": 17, "name": "NCTU_Radar (National Chiao Tung University)" },
-        { "id": 18, "name": "GOBACK (Seoul National University)" },
-        { "id": 19, "name": "LLL (Peking University)" },
-        { "id": 20, "name": "AC_FROM_ZZAM (Korea University)" },
-        { "id": 21, "name": "Coding Slaves (Pusan National University)" },
-        { "id": 22, "name": "BUFS RODAH! (Busan University of Foreign Studies)" },
-        { "id": 23, "name": "Algorist (Sejong University)" },
-        { "id": 24, "name": "JeonGirl (Hankuk University of Foreign Studies)" },
-        { "id": 25, "name": "313usually (KAIST)" },
-        { "id": 26, "name": "Bubble Bath (Yonsei University)" },
-        { "id": 27, "name": "CodingMonGO (Kyung Hee University)" },
-        { "id": 28, "name": "NPC1 (SungKyunKwan University)" },
-        { "id": 29, "name": "MeowiNThebox (National Taiwan University)" },
-        { "id": 30, "name": "LipCoding (Seoul National University)" },
-        { "id": 31, "name": "VANSu_gak (SungKyunKwan University)" },
-        { "id": 32, "name": "BByuBByuBBiBByuBBi (Seoul National University)" },
-        { "id": 33, "name": "575.cpp (University of Aizu)" },
-        { "id": 34, "name": "afterschool (Chungbuk National University)" },
-        { "id": 35, "name": "DefineRainsFromAbove (Dongguk University)" },
-        { "id": 36, "name": "ASC (Yonsei University Wonju Campus)" },
-        { "id": 37, "name": "The Hedgehogs (Ulsan National Institute of Science and Technology)" },
-        { "id": 38, "name": "yeo_hisashiburi (Ajou University)" },
-        { "id": 39, "name": "ANT1 (Chungnam National University)" },
-        { "id": 40, "name": "EC1 (Seoul National University of Science & Technology)" },
-        { "id": 41, "name": "Algor (University of Seoul)" },
-        { "id": 42, "name": "GoldenGate (Sookmyung Women's University)" },
-        { "id": 43, "name": "HeroesNeverDie (Inha University)" },
-        { "id": 44, "name": "Kimchi rains from above (Seoul National University)" },
-        { "id": 45, "name": "hanzo (Hanyang University)" },
-        { "id": 46, "name": "Gamakmot (Ulsan National Institute of Science and Technology)" },
-        { "id": 47, "name": "joisndra (Kyoto University)" },
-        { "id": 48, "name": "Is this hard mode? (KAIST)" },
-        { "id": 49, "name": "SeMyungE_HANZO (Hanyang University)" },
-        { "id": 50, "name": "HeroesEverDie (Inha University)" },
-        { "id": 51, "name": "HanzoGak (Sangmyung University)" },
-        { "id": 52, "name": "Why so serious (Chonnam National University)" },
-        { "id": 53, "name": "yesanswer (Soongsil University)" },
-        { "id": 54, "name": "Red Velvet (Seoul National University)" },
-        { "id": 55, "name": "HackNoZam (The Catholic University of Korea)" },
-        { "id": 56, "name": "PLEASE OPEN TESTDATA (Seoul National University)" },
-        { "id": 57, "name": "AAA (Ajou University)" },
-        { "id": 58, "name": "Trilobite (Sogang University)" },
-        { "id": 59, "name": "MAZIMAK_IPSE (Chungbuk National University)" },
-        { "id": 60, "name": "Never Give Up (Korea University)" },
-        { "id": 61, "name": "Bit Da Bit (Kyungpook National University)" },
-        { "id": 62, "name": "Real Recognize Real (Yonsei University)" },
-        { "id": 63, "name": "2SulTokTok (Korea University)" },
-        { "id": 64, "name": "BurungBurungBusKisa (Hanyang University)" },
-        { "id": 65, "name": "Master Spark (Pohang University of Science and Technology)" },
-        { "id": 66, "name": "NINANO (Sogang University)" },
-        { "id": 67, "name": "GENTWIHAN (Kumoh National Institute of Technology)" },
-        { "id": 68, "name": "PuzzleC (Kangwon National University)" },
-        { "id": 69, "name": "Team_10_deung (Soongsil University)" },
-        { "id": 70, "name": "ACGTeam (Seoul National University)" },
-        { "id": 71, "name": "Ghost (Handong Global University)" },
-        { "id": 72, "name": "LOGIC (Chosun University)" },
-        { "id": 73, "name": "lowpass (Korea University of Technology and Education)" },
-        { "id": 74, "name": "HAPpy (Pukyong National University)" },
-        { "id": 75, "name": "CocaCola (KAIST)" },
-        { "id": 76, "name": "Zaranara murymury (Chung-Ang University)" },
-        { "id": 77, "name": "ShyShyShy (Ewha Womans University)" },
-        { "id": 78, "name": "BuzzerBeater (Soongsil University)" },
-        { "id": 79, "name": "Dohchuk (Ulsan National Institute of Science and Technology)" },
-        { "id": 80, "name": "Train_To_Daejeon (The Chinese University of Hong Kong)" },
-        { "id": 81, "name": "Hello World Final! (Seoul National University)" },
-        { "id": 82, "name": "PS00 (KAIST)" },
-        { "id": 83, "name": "9664P (Seoul National University)" },
-        { "id": 84, "name": "SRC (Korea University)" },
-        { "id": 85, "name": "GuiYomee (Pohang University of Science and Technology)" },
-        { "id": 86, "name": "Give Me Balloon (Daegu Science High School)" }
-    ]
+        {
+            "id": 1,
+            "name": "YOCO (Dong-A University)"
+        },
+        {
+            "id": 2,
+            "name": "CSDN (KAIST)"
+        },
+        {
+            "id": 3,
+            "name": "FourierGaussEuler (Chungnam National University)"
+        },
+        {
+            "id": 4,
+            "name": "Military Reserve Force (Seoul National University)"
+        },
+        {
+            "id": 5,
+            "name": "Drop The Bit (SungKyunKwan University)"
+        },
+        {
+            "id": 6,
+            "name": "SunjaeAttack (Seoul National University)"
+        },
+        {
+            "id": 7,
+            "name": "HateMoki (Ewha Womans University)"
+        },
+        {
+            "id": 8,
+            "name": "Today_Is_YoungJeong_Birthday (Soongsil University)"
+        },
+        {
+            "id": 9,
+            "name": "MDMA (Ulsan National Institute of Science and Technology)"
+        },
+        {
+            "id": 10,
+            "name": "Morgorithm (Konkuk University)"
+        },
+        {
+            "id": 11,
+            "name": "Chill out (Korea Maritime University)"
+        },
+        {
+            "id": 12,
+            "name": "GooGoo (Gyeongsang National University)"
+        },
+        {
+            "id": 13,
+            "name": "pkmem (Pukyong National University)"
+        },
+        {
+            "id": 14,
+            "name": "RUN13 (KAIST)"
+        },
+        {
+            "id": 15,
+            "name": "EXPT (Kyungpook National University)"
+        },
+        {
+            "id": 16,
+            "name": "NuclearLaunchDetected (Hanyang University)"
+        },
+        {
+            "id": 17,
+            "name": "UKUNICHIA (University of Aizu)"
+        },
+        {
+            "id": 18,
+            "name": "honaldomarichicken (Kookmin University)"
+        },
+        {
+            "id": 19,
+            "name": "Obaksa (Kangwon National University)"
+        },
+        {
+            "id": 20,
+            "name": "WA Machine (Seoul National University)"
+        },
+        {
+            "id": 21,
+            "name": "Restaurance (SungKyunKwan University)"
+        },
+        {
+            "id": 22,
+            "name": "The Hedgehogs (Ulsan National Institute of Science and Technology)"
+        },
+        {
+            "id": 23,
+            "name": "Bool_Pyeon (Chonbuk National University)"
+        },
+        {
+            "id": 24,
+            "name": "Distutpia (KAIST)"
+        },
+        {
+            "id": 25,
+            "name": "MIC (Kyungsung University)"
+        },
+        {
+            "id": 26,
+            "name": "NP_No_Pants (Yonsei University)"
+        },
+        {
+            "id": 27,
+            "name": "Master Spark (Pohang University of Science and Technology)"
+        },
+        {
+            "id": 28,
+            "name": "all_last (Korea University)"
+        },
+        {
+            "id": 29,
+            "name": "CoAlMot2017 (Gwangju Institute of Science and Technology)"
+        },
+        {
+            "id": 30,
+            "name": "molla_yo (Chungbuk National University)"
+        },
+        {
+            "id": 31,
+            "name": "JoisnDragon (Kyoto University)"
+        },
+        {
+            "id": 32,
+            "name": "Play Energy (The Chinese University of Hong Kong)"
+        },
+        {
+            "id": 33,
+            "name": "OneSun (Inha University)"
+        },
+        {
+            "id": 34,
+            "name": "che_up (Hankuk University of Foreign Studies)"
+        },
+        {
+            "id": 35,
+            "name": "_0u0_ (Seoul National University)"
+        },
+        {
+            "id": 36,
+            "name": "BloodTrail (Ajou University)"
+        },
+        {
+            "id": 37,
+            "name": "Tju_master_driver (Tianjin University)"
+        },
+        {
+            "id": 38,
+            "name": "!!!!!!We are first team!!!!!! (Seoul National University)"
+        },
+        {
+            "id": 39,
+            "name": "Please Support Python (KAIST)"
+        },
+        {
+            "id": 40,
+            "name": "where_is_the_09 (Soongsil University)"
+        },
+        {
+            "id": 41,
+            "name": "Annyong (Kyung Hee University)"
+        },
+        {
+            "id": 42,
+            "name": "comkids (Korea National University of Education)"
+        },
+        {
+            "id": 43,
+            "name": "growinloess.com (MyongJi University)"
+        },
+        {
+            "id": 44,
+            "name": "SWDM (Gachon University)"
+        },
+        {
+            "id": 45,
+            "name": "bbak (The Catholic University of Korea)"
+        },
+        {
+            "id": 46,
+            "name": "Hon_Gik_Univ (Hongik University)"
+        },
+        {
+            "id": 47,
+            "name": "AhnParkKim (Pusan National University)"
+        },
+        {
+            "id": 48,
+            "name": "TheKeyBoardmeow (National Taiwan University)"
+        },
+        {
+            "id": 49,
+            "name": "Bug Hunter (Seoul National University of Science & Technology)"
+        },
+        {
+            "id": 50,
+            "name": "DoWF (Korea University)"
+        },
+        {
+            "id": 51,
+            "name": "Fookey (Sangmyung University)"
+        },
+        {
+            "id": 52,
+            "name": "ACGTeam (Seoul National University)"
+        },
+        {
+            "id": 53,
+            "name": "BlueJoker (Sogang University)"
+        },
+        {
+            "id": 54,
+            "name": "Deobureo Minkyu Party (KAIST)"
+        },
+        {
+            "id": 55,
+            "name": "SOL_TAL (Hanyang University)"
+        },
+        {
+            "id": 56,
+            "name": "yohohohohohohohohohohohoyo (Korea Aerospace University)"
+        },
+        {
+            "id": 57,
+            "name": "LastDGSSM (Kumoh National Institute of Technology)"
+        },
+        {
+            "id": 58,
+            "name": "KumyzPower (Ulsan National Institute of Science and Technology)"
+        },
+        {
+            "id": 59,
+            "name": "1domolla (Busan University of Foreign Studies)"
+        },
+        {
+            "id": 60,
+            "name": "NCTU_Foudre (National Chiao Tung University)"
+        },
+        {
+            "id": 61,
+            "name": "Team Name (KAIST)"
+        },
+        {
+            "id": 62,
+            "name": "Happy (Cheju National University)"
+        },
+        {
+            "id": 63,
+            "name": "Chocobi (Dong-Eui University)"
+        },
+        {
+            "id": 64,
+            "name": "MolaMola (Seoul National University)"
+        },
+        {
+            "id": 65,
+            "name": "Mongol (Dongguk University)"
+        },
+        {
+            "id": 66,
+            "name": "aladin (Sookmyung Women's University)"
+        },
+        {
+            "id": 67,
+            "name": "speedgamehaja (Kookmin University)"
+        },
+        {
+            "id": 68,
+            "name": "NP_Not_Polynomial (Yonsei University)"
+        },
+        {
+            "id": 69,
+            "name": "NoMonk (Chung-Ang University)"
+        },
+        {
+            "id": 70,
+            "name": "estu (Hanyang University)"
+        },
+        {
+            "id": 71,
+            "name": "Wrong answer on test 87 (Seoul National University)"
+        },
+        {
+            "id": 72,
+            "name": "Little Alcuk (The Catholic University of Korea)"
+        },
+        {
+            "id": 73,
+            "name": "asdf (Korea University)"
+        },
+        {
+            "id": 74,
+            "name": "PraiseTheSun (Korea University of Technology and Education)"
+        },
+        {
+            "id": 75,
+            "name": "DDiyoooooong (Chonnam National University)"
+        },
+        {
+            "id": 76,
+            "name": "Jihoon and the Faces (KAIST)"
+        },
+        {
+            "id": 77,
+            "name": "Im_Nottheonly_One (Handong Global University)"
+        },
+        {
+            "id": 78,
+            "name": "502_Bad_Gateway (Gwangju Institute of Science and Technology)"
+        },
+        {
+            "id": 79,
+            "name": "skynet (Kyung Hee University)"
+        },
+        {
+            "id": 80,
+            "name": "Soon_Army (University of Seoul)"
+        },
+        {
+            "id": 81,
+            "name": "OhDohDock (Hanyang University ERICA Campus)"
+        },
+        {
+            "id": 82,
+            "name": "*in (Seoul National University)"
+        },
+        {
+            "id": 83,
+            "name": "AeRaMoLeuGetDaPPAP (Korea University)"
+        },
+        {
+            "id": 84,
+            "name": "Esanghannoms (Inje University)"
+        },
+        {
+            "id": 85,
+            "name": "proc (Pusan National University)"
+        },
+        {
+            "id": 86,
+            "name": "GidoMeta (Sogang University)"
+        }
+    ],
+    "title": "2017 ACM-ICPC Daejeon Regional"
 }

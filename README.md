@@ -10,6 +10,7 @@ Demo
     ACM-ICPC Daejeon Regional
     [[2015]](http://icpckorea.org/2015/REGIONAL/scoreboard.html)
     [[2016]](http://icpckorea.org/2016/REGIONAL/scoreboard.html)
+    [[2017]](http://icpckorea.org/2017/regional/scoreboard/)
 * Award Ceremony Video:
     [[2013]](https://youtu.be/ZXYwvFinZEk?t=1215)
     [[2014]](https://youtu.be/UVAnGe35PY4)

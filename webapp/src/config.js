@@ -111,7 +111,7 @@ config =
     //foreign_teams : [ 2000, 2001 ],
     foreign_teams : function(team) {
         /* an example config */
-        var foreign_teams_list = [2000, 2001];
+        var foreign_teams_list = [48, 60, 31, 32, 17, 37];
         var foreign_affiliations = [
             "Peking University",
             "National Taiwan University",
@@ -152,8 +152,8 @@ config =
      * according to the number of problems solved.
      */
     award_animation_speeds: [
-      { solved: 10, fastFlipSpeed: 1200, slowFlipSpeed: 2000, utuSpeedFunc: function(up_cnt) { return Math.min(500 + up_cnt * 100, 2000); } },
-      { solved: 9,  fastFlipSpeed: 800,  slowFlipSpeed: 1200, utuSpeedFunc: function(up_cnt) { return Math.min(500 + up_cnt * 100, 2000); } },
+      { solved: 11, fastFlipSpeed: 1200, slowFlipSpeed: 2000, utuSpeedFunc: function(up_cnt) { return Math.min(500 + up_cnt * 100, 2000); } },
+      { solved: 9,  fastFlipSpeed: 600,  slowFlipSpeed: 800, utuSpeedFunc: function(up_cnt) { return Math.min(500 + up_cnt * 100, 2000); } },
       { solved: 7,  fastFlipSpeed: 400,  slowFlipSpeed: 600,  utuSpeedFunc: function(up_cnt) { return Math.min(500 + up_cnt * 100, 2000); } },
       { solved: 3,  fastFlipSpeed: 200,  slowFlipSpeed: 300,  utuSpeedFunc: function(up_cnt) { return Math.min(250 + up_cnt * 50, 3000); } },
       { solved: 0,  fastFlipSpeed: 200,  slowFlipSpeed: 300,  utuSpeedFunc: function(up_cnt) { return Math.min(150 + up_cnt * 30, 1000); } }
@@ -168,7 +168,7 @@ config =
      *
      * e.g. ['C', 'A', 'F']  : Reveals in order 'C', 'A', 'F', 'B', 'D', 'E', 'G', ...
      */
-    award_reveal_order : [],
+    award_reveal_order : ['D', 'C', 'F', 'H', 'K', 'B', 'G', 'I', 'L', 'E', 'A', 'J'],
 
     /**
      * Specify whether to use blinking effect before revealing a focused pending run.
@@ -181,6 +181,9 @@ config =
       // or current ranking of the team is less than 10.
       var solved = teamStatus.getTotalSolved();
       var currentRank = teamStatus.getRank();
-      return solved >= 7 || currentRank <= 10;
+      return solved >= 10 || currentRank <= 10;
     },
 };
+
+
+config.environment = "production";
