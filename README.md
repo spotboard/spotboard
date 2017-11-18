@@ -19,14 +19,35 @@ Demo
 Usage
 -----
 
+Spotboard consists of two main modules: a static **web application** (frontend),
+and the **feedserver** (backend: API server) that provides the contest information.
+
+### Frontend: [Web Application][src-webapp]
+
 Download [a webapp package](https://github.com/spotboard/spotboard/releases), and serve it using any HTTP server.
 We recommend `http-server -c-1` (disable cache) or `nginx`.
+A path to the API server and many other preferences can be configured in [config.js][config_sample].
 
-You'll also need to set up the feedserver (PC^2 or Domjudge), as described below.
+### Backend: FeedServer
+
+The feedserver should provide the contest information and all the runs (submissions) during the contest,
+[in JSON][json_sample].
+For common contest systems such as [PC^2] or [Domjudge], please see below.
+
+Disclaimer: Some of internal API specifications might be not backward-compatible.
+
+Backend: Domjudge
+-----------------
+
+You may find [spotboard/domjudge-converter] useful.
+
+[spotboard/domjudge-converter]: https://github.com/spotboard/domjudge-converter
 
 
-Usage (for PC^2)
-----------------
+Backend: PC^2
+-------------
+
+Disclaimer: This part is not yet open-sourced, sorry :)
 
 *TL;DR)* Setup the `config.yaml`, then launch the spotboard server application.
 
@@ -35,17 +56,21 @@ $ vim config.yaml
 $ java -jar spotboard-server.jar
 ```
 
-Spotboard consists of two main modules: a static **web application**, and the **feedserver** (an API server) which provides contest information [in JSON][json_sample].
-
+<!--
 - The web application can be hosted using commonly-used web servers such as Nginx and Apache,
   or using the embedded web server provided. See the [detailed documentation](docs/webapp.md).
 - The feedserver should provide the contest information and all the runs (submissions) during the contest.
   It is shipped with *off-the-shelf* bridges to other programming contest systems such as PC^2.
   See the [detailed documentation](docs/feedserver.md).
+-->
 
+[PC^2]: https://pc2.ecs.csus.edu/
+[Domjudge]: https://www.domjudge.org/
+
+[src-webapp]: https://github.com/spotboard/spotboard/tree/master/webapp
+[config_sample]: https://github.com/spotboard/spotboard/blob/master/webapp/src/config.js
 [json_sample]: https://github.com/spotboard/spotboard/tree/master/webapp/src/sample
 
-Disclaimer: Some of internal APIs might be not backward-compatible.
 
 Documentation
 -------------
