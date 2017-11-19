@@ -446,7 +446,8 @@ function($, Handlebars, Spotboard) {
         } );
 
         $.each(problemsNewlySolved, function(idx, problemStat) {
-            Spotboard.View.addBalloon($team, problemStat);
+            if (Spotboard.config['show_balloons'])
+                Spotboard.View.addBalloon($team, problemStat);
         } );
 
     };

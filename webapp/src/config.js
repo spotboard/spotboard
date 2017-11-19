@@ -51,6 +51,11 @@ config =
     show_first_solve   : true,
 
     /**
+     * Specify whether to show balloon images.
+     */
+    show_balloons   : true,
+
+    /**
      * Specify whether to automatically start the scoreboard update.
      * If false, update will be paused.
      */
