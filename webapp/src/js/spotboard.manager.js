@@ -331,6 +331,7 @@ function(Spotboard, $)  {
             $(this).data('timeout', setTimeout(function() {
                 // 검색 필터 설정 (100ms 반응 딜레이)
                 var query = $(this).val();
+                Spotboard.Util.updateQueryStringParameter('q', query);
                 console.log(query);
                 Spotboard.View.setSearchFilter(query);
             }.bind(this), 100));

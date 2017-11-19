@@ -43,7 +43,7 @@ function(jQuery, __meta__) {
         if(rm) config['animation'] = (rm[1] == 'true');
 
         rm = /q=([-*+% \w]+)/.exec(wls);
-        if(rm) config['search_query'] = '^' + decodeURIComponent(rm[1]) + '$';
+        if(rm) config['search_query'] = decodeURIComponent(rm[1]);
 
         rm = /t=(\d+)/.exec(wls);
         if(rm) config['team_to_follow'] = parseInt(rm[1]);
