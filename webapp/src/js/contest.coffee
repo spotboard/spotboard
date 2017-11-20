@@ -84,7 +84,7 @@ class Problem
 
 
 class Team
-    constructor : (@contest, @id, @name, @group = null) ->
+    constructor : (@contest, @id, @name, @group = null, @basePenalty = null) ->
         # try to get group from parsing..
         if not (group?)
             regx = /^([^(]+)\(([^)]*)\)$/.exec(@name)
@@ -92,6 +92,8 @@ class Team
                 [@name, @group] = [regx[1].trim(), regx[2].trim()] if regx
             catch ex
                 @group = null
+        if not (@basePenalty?)
+            @basePenalty = 0
 
 
     # method
@@ -101,6 +103,7 @@ class Team
     getGroup : (nullAsEmpty = false) ->
         return "" if nullAsEmpty and @group is null
         return     @group
+    getBasePenalty : -> @basePenalty
 
 
 class TeamStatus
@@ -138,7 +141,7 @@ class TeamStatus
 
     getPenalty : ->
         return @cache.penalty ? @cache.penalty = do =>
-            s = 0
+            s = @team.getBasePenalty()
             for pid, ps of @problemStatuses
                 s += ps.getContributingPenalty()
             return s
@@ -233,7 +236,7 @@ class TeamProblemStatus
     getContributingPenalty : ->
         return @cache.penalty ? @cache.penalty = do =>
             if this.isAccepted()
-                return (this.getFailedAttempts()) * 20 + this.getSolvedTime()
+                return (this.getFailedAttempts()) * @contest.getPenaltyTime() + this.getSolvedTime()
             else return 0
 
     getPenaltyMemoString : ->
@@ -242,7 +245,7 @@ class TeamProblemStatus
                 if this.getFailedAttempts() == 0
                     return "#{this.getSolvedTime()}"
                 else
-                    return "#{this.getSolvedTime()} + 20 * #{this.getFailedAttempts()} = #{this.getContributingPenalty()}"
+                    return "#{this.getSolvedTime()} + #{@contest.getPenaltyTime()} * #{this.getFailedAttempts()} = #{this.getContributingPenalty()}"
             else return ''
 
     getSolvedTime : ->
@@ -367,10 +370,13 @@ class Run
 
 
 class Contest
-    constructor : (@contestTitle, @systemName, @systemVersion, problems=[], teams=[]) ->
+    constructor : (@contestTitle, @systemName, @systemVersion, problems=[], teams=[], @penaltyTime) ->
+        if not @penaltyTime?
+            @penaltyTime = 20
         throw Error("contestTitle must be a string")    unless typeof(@contestTitle) is 'string'
         throw Error("systemName must be a string")      unless typeof(@systemName) is 'string'
         throw Error("systemVersion must be a string")   unless typeof(@systemVersion) is 'string'
+        throw Error("penaltyTime must be a number")     unless typeof(@penaltyTime) is 'number'
 
         @problems = []
         for p in problems
@@ -380,19 +386,20 @@ class Contest
         @teams = []
         for t in teams
             tid = parseInt(t.id)
-            @teams[tid] = new Team(this, tid, t.name, t.group)
+            @teams[tid] = new Team(this, tid, t.name, t.group, t.basePenalty)
 
 
     @createFromJson : (contest) ->
         contestTitle = contest['title'] || 'ACM-ICPC Contest'
         systemName = contest['systemName'] || ''
         systemVersion = contest['systemVersion'] || ''
+        penaltyTime = if 'penaltyTime' of contest then contest['penaltyTime'] else 20
 
         # build problems, teams : list of class instances
         problems = assertNotNull( contest['problems'] )
         teams = assertNotNull( contest['teams'] )
 
-        theContest = new Contest(contestTitle, systemName, systemVersion, problems, teams)
+        theContest = new Contest(contestTitle, systemName, systemVersion, problems, teams, penaltyTime)
         theContest.initialize()
         return theContest
 
@@ -419,6 +426,7 @@ class Contest
     getContestTitle : -> @contestTitle
     getSystemName : -> @systemName
     getSystemVersion : -> @systemVersion
+    getPenaltyTime : -> @penaltyTime
 
     getProblems : -> @problems
     getTeams : -> @teams
