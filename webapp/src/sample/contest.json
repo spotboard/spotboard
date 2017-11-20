@@ -2,6 +2,7 @@
     "title": "2016 ACM-ICPC Asia Daejeon Regional Contest",
     "systemName": "DOMJudge v5.1.2 Daejeon",
     "systemVersion": "",
+    "penaltyTime": 20,
     "problems": [
         { "id": 0, "name": "A", "color": "red", "title": "Bridge Park" },
         { "id": 1, "name": "B", "color": "orange", "title": "Football" },
@@ -17,9 +18,9 @@
         { "id": 11, "name": "L", "color": "purple", "title": "Virus" }
     ],
     "teams": [
-        { "id": 1, "name": "Nooglers+1 (Ulsan National Institute of Science and Technology)" },
-        { "id": 2, "name": "hYEAHyea (KAIST)" },
-        { "id": 3, "name": "Flareon (Seoul National University)" },
+        { "id": 1, "name": "Nooglers+1 (Ulsan National Institute of Science and Technology)", "basePenalty": 0 },
+        { "id": 2, "name": "hYEAHyea (KAIST)", "basePenalty": 0 },
+        { "id": 3, "name": "Flareon", "group": "Seoul National University" },
         { "id": 4, "name": "Codingmothae (Korea Aerospace University)" },
         { "id": 5, "name": "NaHonJaMyWay (Hanyang University)" },
         { "id": 6, "name": "PSPartner (Dong-A University)" },
