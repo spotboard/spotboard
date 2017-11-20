@@ -100,6 +100,29 @@ function($, Spotboard) {
         Spotboard.Util.ordinalSuffix
     );
 
+    Spotboard.Util.updateQueryStringParameter = function (key, value) {
+        var uri = window.location.search;
+        value = encodeURIComponent(value);
+        var re = new RegExp("([?&])" + key + "=.*?(&|$)", "i");
+        var separator = uri.indexOf('?') !== -1 ? "&" : "?";
+        var res;
+        if (!value) {
+            res = uri.replace( new RegExp( "\\b" + key + "=[^&;]+[&;]?", "gi" ), "" );
+            // remove any leftover crud
+            res = res.replace( /[&;]$/, "" );
+            if (res === '?') res = '';
+        }
+        else if (uri.match(re)) {
+            res = uri.replace(re, '$1' + key + "=" + value + '$2');
+        }
+        else {
+            res = uri + separator + key + "=" + value;
+        }
+        var newURL = window.location.protocol + "//" + window.location.host + window.location.pathname + res;
+        if (window.history.pushState)
+            window.history.pushState({ path : newURL }, '', newURL);
+    }
+
     return Spotboard.Util;
 
 });
